@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>최적화 온도 프로그램</title>
+
+
+	<script>
+		  function validateForm() {
+			var username = document.forms["loginForm"]["username"].value;
+			var password = document.forms["loginForm"]["password"].value;
+			if (username == "" || password == "") {
+				alert("Username and password must be filled out");
+				return false;
+			} else if (username == "12" && password == "34") {
+				alert("Login successful!");
+				return true;
+			} else {
+				alert("Invalid username or password");
+				return false;
+			}
+		}
+	</script>
+
+	<style>
+
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			color: #333;
+			font-size: 36px;
+			margin-top: 40px;
+			text-align: center;
+		}
+		p {
+			color: #666;
+			font-size: 18px;
+			line-height: 1.5;
+			margin-top: 20px;
+			text-align: center;
+		}
+
+        h2{
+            text-align: center;
+
+        }
+		form {
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	
+	</style>
+
+    
+
+
+</head>
+<body>
+
+
+
+
+
+   
+	<h1>최적화 온도 프로그램</h1>
+
+    <h2>Login Form</h2>
+	<form name="loginForm" onsubmit="return validateForm()" action="로그인 후 메인 실행화면.html" method="post">
+  <label for="username">Username:</label>
+		<input type="text" id="username" name="username"><br><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br><br>
+		<input type="submit" value="Login">
+	</form>
+
+
+
+    
+    
+</body>
+</html>

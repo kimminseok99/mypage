@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>최적화 온도 프로그램</title>
+
+
+	<script>
+
+		//스위치 on/off
+		const toggle = document.getElementById('toggle');
+		const onText = document.querySelector('.text.on');
+		const offText = document.querySelector('.text.off');
+		
+		toggle.addEventListener('click', function() {
+		  if (toggle.checked) {
+			onText.style.display = 'block';
+			offText.style.display = 'none';
+		  } else {
+			onText.style.display = 'none';
+			offText.style.display = 'block';
+		  }
+		});
+		
+	
+
+
+
+	  </script>
+
+
+	  <script>
+		//목표온도설정
+			const currentTemperature = 25; // 현재 측정된 온도
+   			const targetTemperature = 23; // 목표 온도
+    		const currentTarget = '반려동물'; // 현재 대상
+
+			const currentTemperatureElement = document.getElementById('current-temperature');
+   		 	currentTemperatureElement.textContent = `${currentTemperature}도`;
+
+	   		const targetTemperatureElement = document.getElementById('target-temperature');
+    		targetTemperatureElement.textContent = `${targetTemperature}도`;
+
+    		const currentTargetElement = document.getElementById('current-target');
+    		currentTargetElement.textContent = currentTarget;
+
+
+
+	  </script>
+	<style>
+/*스위치*/
+.switch-container {
+  display: flex;
+  justify-content: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 40px;
+  width: 80px;
+  height: 40px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 32px;
+  width: 32px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(40px);
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.on {
+  left: 8px;
+}
+
+.off {
+  right: 8px;
+}
+
+/* 메뉴바        */
+        nav {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		li {
+			float: left;
+		}
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		li a:hover {
+			background-color: #111;
+		}
+
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			color: #333;
+			font-size: 36px;
+			margin-top: 40px;
+			text-align: center;
+		}
+		p1{
+			color: #666;
+			font-size: 24px;
+			line-height: 1.5;
+			margin-top: 20px;
+			position: absolute;
+			left: 300px;
+			top: 340px;
+		}
+
+		p2{
+			color: #666;
+			font-size: 24px;
+			line-height: 1.5;
+			margin-top: 20px;
+			position: absolute;
+			left: 300px;
+			top: 400px;
+		}
+
+		p3{
+			color: #666;
+			font-size: 24px;
+			line-height: 1.5;
+			margin-top: 20px;
+			position: absolute;
+			left: 300px;
+			top: 460px;
+		}
+		.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+button{
+	font-size: 18px;
+  	font-weight: bold;
+ 	 margin-right: 10px;
+
+}
+
+	</style>
+
+    
+
+
+</head>
+<body>
+
+	
+    <nav>
+		<ul>
+			<li><a href="#">홈</a></li>
+			<li><a href="www.naver.com">실시간 화면</a></li>
+			<li><a href="#">버전정보</a></li>
+		</ul>
+	</nav>
+	<h1>최적화 온도 프로그램</h1>
+
+	<div class="switch-container">
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+    <span class="text on">ON</span>
+    <span class="text off">OFF</span>
+  </label>
+</div>
+	
+
+
+
+
+
+<div class="center">
+	<label for="target">목표 대상: </label>
+	<input type="text" id="target" name="target">
+	<button onclick="setTarget()">설정</button>
+  </div>
+  <div class="center">
+	<label for="temp">목표 온도: </label>
+	<input type="number" id="temp" name="temp" min="0" max="100">
+	<button id="set-target-temperature-btn">설정</button>
+</div>
+	 		 <p1>현재 측정된 온도: <span id="current-temperature"></span></p1>
+	 		 <p2>목표 온도: <span id="target-temperature"></span></p2>
+	 		 <p3>현재 대상: <span id="current-target"></span></p3>
+	  		
+			  
+
+
+    
+    
+</body>
+</html>
